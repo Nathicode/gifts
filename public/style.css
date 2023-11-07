@@ -1,0 +1,163 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+nav {
+    width: 100%;
+    display: flex;
+justify-content: space-between;
+background-color: lightgreen;
+padding-bottom: 10px;
+}
+.icons {
+    width: 70%;
+ align-items: center;
+ display: flex;
+ justify-content: space-around;   
+}
+.logo {
+    margin-left: .5cm;
+}
+@media(max-width: 700px) {
+    nav{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .icons {
+        width: 100%;
+       
+    }
+    .icons a {
+        color: black;
+        transition-duration: .5;
+    }
+}
+.icons a:hover {
+    color: white;
+}
+footer {
+
+position: fixed;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100%;background-color: lightgreen;
+}
+footer .icons {
+    display: flex;
+   padding: 5px;
+
+}
+footer .icons a {
+    margin-top: 1cm;
+}
+.questions {
+    margin-top: 1cm;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.questions button {
+    margin-top: 1cm;
+    width: 150px;
+    height: 40px;
+    background-color: lightgreen;
+    color: black;
+    border: none;
+}
+.questions a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: black;
+}
+form {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2cm;
+}
+form label {
+    padding: 10px;
+}
+form input {
+    width: 80%;
+    height: 40px;
+}
+form button {
+    margin-top: 1cm;
+    width: 120px;
+    height: 40px;
+    background-color: lightgreen;
+    border: 2px solid;
+    transition-duration: .2s;
+}
+form button:hover {
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+}
+.titles {
+    font-size: medium;
+    text-align: center;
+}
+.message {
+    text-align: center;
+    margin-top: 20px;
+}
+.winners {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.winner {
+    background-color: lightgreen;
+    margin: auto;
+    margin-top: 1cm;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.questions button {
+    margin: auto;
+    margin-top: 1cm;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2cm;
+    width: 100%;
+    text-align: center;
+}
+.contact li {
+list-style-type: none;
+background-color: lightgreen;
+width: 50%;
+margin: auto;
+margin-top: 1cm;
+}
+.contact a {
+    color: black;
+    text-decoration: none;
+
+}

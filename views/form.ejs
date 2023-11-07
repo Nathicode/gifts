@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('./partial/nav.ejs') %>
+<div class="titles">
+    <h2>You Made it Right</h2>
+</div>
+     <div class="form">
+        <form action="/post" method="POST">
+            <label for="name">What is Your name?</label>
+            <input type="text" id="name" name="name">
+            <label for="phone">Your Phone Number</label>
+            <input type="text" name="phone" id="phone">
+            <button>Submit</button>
+          </form>
+          <div class="message">
+          <% if(!messages == ''){ %>
+            <p><%= messages %></p>
+          <%} %>
+          </div>
+     </div>
+          <%- include('./partial/footer.ejs') %>
+
+    </div>
+    <script src="https://kit.fontawesome.com/a05450ab44.js" crossorigin="anonymous"></script>
+
+</body>
+         
+</html>

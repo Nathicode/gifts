@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+      box-sizing: border-box;
+        }
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .single {
+            margin: auto;
+            margin-top: 3cm;
+            background-color: crimson;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 5px;
+            border-radius: 20px;
+            width: 50%;
+            text-align: center;
+        }
+        #title {
+            margin: auto;
+            margin-top: 2cm;
+            text-align: center;
+            color: crimson;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+       #alink {
+            width: 120px;
+            height: 40px;
+           margin: auto;
+           margin-top: 1cm;
+           padding: 2px;
+            background-color: crimson;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-radius: 5px;
+        }
+        .container {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <%- include('./partials/nav.ejs') %>
+        <p id="title">Your Selected blog</p>
+        <div class="single">
+            <p><%= blog.title %></p>
+            <p><%= blog.snippet %></p>
+           
+        </div>
+        <a href="" data-doc="<%= blog._id %>" id="alink">Delete</a>
+        <script>
+            const trash = document.querySelector('#alink');
+            trash.addEventListener('click', () =>{
+                const endpoint = `/blogs/${trash.dataset.doc}`;
+                fetch(endpoint, {
+                    method: 'DELETE'
+                })
+                .then((response) => response.json())
+                .then((data) => window.location.href = data.redirect)
+                .catch((err) => {console.log(err);})
+            })
+        </script>
+    </div>
+</body>
+</html>
